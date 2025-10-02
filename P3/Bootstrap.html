@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Instagram Profile - Bootstrap (Desktop)</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body { background: #fafafa; }
+      .profile-header { max-width: 980px; margin: 40px auto; }
+      .avatar { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; }
+      .stats { font-weight: 600; }
+      .gallery img { height: 260px; object-fit: cover; }
+      .highlight img { width: 60px; height: 60px; object-fit: cover; border-radius: 70%; border: 2px solid #ddd; }
+      .highlight-label { font-size: 0.85rem; margin-top: 5px; }
+      @media (max-width: 992px) {
+        .gallery img { height: 200px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container profile-header bg-white p-4 rounded shadow-sm">
+      <div class="d-flex align-items-center">
+        <img src="foto admin.jpg" alt="avatar" class="avatar me-4">
+        <div>
+          <div class="d-flex align-items-center mb-2">
+            <h2 class="me-3 mb-0">@khifa_ji</h2>
+            <button class="btn btn-outline-primary btn-sm me-2">Follow</button>
+            <button class="btn btn-outline-secondary btn-sm">Message</button>
+          </div>
+          <div class="d-flex gap-4 mb-2">
+            <div class="stats"><span class="h5">10</span> posts</div>
+            <div class="stats"><span class="h5">140</span> followers</div>
+            <div class="stats"><span class="h5">506</span> following</div>
+          </div>
+          <div class="fw-semibold">Ahmad  Ghozi Al Khifari</div>
+          <div class="text-muted">Someone.</div>
+        </div>
+      </div>
+
+      <!-- Sorotan (Highlight) -->
+      <div class="highlight d-flex gap-4 justify-content-start my-4">
+        <div class="text-center">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1024px-Flag_of_the_United_States.svg.png" alt="h1">
+          <div class="highlight-label">US</div>
+        </div>
+        <div class="text-center">
+          <img src="https://media.istockphoto.com/id/1150921192/id/vektor/bendera-nasional-jepang-ilustrasi-vektor-tokyo.jpg?s=612x612&w=0&k=20&c=2p05ppB7xqdwugDzcCqfGDcQ3RzYXt_2A-CDg-KwlN0=" alt="h2">
+          <div class="highlight-label">JAPAN</div>
+        </div>
+        <div class="text-center">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Flag_of_Indonesia_%28physical_version%29.svg/1200px-Flag_of_Indonesia_%28physical_version%29.svg.png" alt="h3">
+          <div class="highlight-label">INDO</div>
+        </div>
+      </div>
+
+      <hr class="my-4">
+
+      <div class="gallery row g-2">
+        <div class="col-4">
+          <img src="https://i.pinimg.com/236x/ae/ff/d6/aeffd6d2e76161d3d7b89cffca8662c1.jpg" class="w-100 rounded" alt="post1">
+        </div>
+        <div class="col-4">
+          <img src="https://images.noiceid.cc/catalog/300x300/catalog-1682286956278" class="w-100 rounded" alt="post2">
+        </div>
+        <div class="col-4">
+          <img src="https://i.pinimg.com/236x/36/47/c1/3647c118ee9a5305b2d222b82e94caef.jpg" class="w-100 rounded" alt="post3">
+        </div>
+        <div class="col-4">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGwM_xBAxdtybZ3NFb58XLGxN2nRF2AMLpuA&s" class="w-100 rounded" alt="post4">
+        </div>
+        <div class="col-4">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjbD7XLOcDvXYjvQcXkTa4R9JIlyAYCJEHJg&s" class="w-100 rounded" alt="post5">
+        </div>
+        <div class="col-4">
+          <img src="https://image.idntimes.com/post/20230321/ced2d929729847a08abf83d8025a6416-335812850-600357411961524-7408716704897353420-n-b9c7fac7543a061202919ad3b742ab1f-3e4ed9e2cc2ff910bba53e98144157b3.jpg" class="w-100 rounded" alt="post6">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
