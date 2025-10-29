@@ -1,0 +1,189 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UTS Ahmad Ghozi Al Khifari</title>
+        <style>
+            body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            flex: 1;
+        }
+
+        .info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            flex: 1.2;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #000000;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #a1a1a1;
+            color: white;
+        }
+
+        .pengiriman {
+            background-color: #eef7ff;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        </style>
+    </head>
+    <body>
+         <div class="container">
+        <!-- Tampilan kiri -->
+        <div class="card">
+            <h2>Input Data</h2>
+            <form id="inputdata">
+                <label for="nama lengkap">Nama Lengkap</label>
+                <input type="text" id="namalengkap" placeholder="Masukkan Nama Lengkap" required>
+
+                <label for="nim">NIM</label>
+                <input type="text" id="NIM" placeholder="Masukkan NIM anda" required>
+
+                <label for="semester">Semester</label>
+                <input type="text" id="semester" placeholder="Anda Semester berapa" required>
+
+                <label for="program studi">Program Studi</label>
+                <select id="programstudi" required>
+                    <option value="">-- Pilih --</option>
+                    <option value="Teknik Informatika">Teknik Informatika</option>
+                    <option value="Teknik Mesin">Teknik Mesin</option>
+                </select>
+
+                <label for="email">Email</label>
+                <input type="text" id="Email" required>
+
+                <button type="button" onclick="simpanData()">Simpan Data</button>
+            </form>
+
+            <div class="pengiriman">
+                <p>! Silahkan isi data terlebih dahulu</p>
+            </div>
+        </div>
+
+        <!-- Tampilan Kanan -->
+        <div class="info">
+            <h2>Informasi Pengiriman</h2>
+            
+            <div class="pengiriman">
+                <h4>Apa yang terjadi saat anda klik "Kirim Data"</h4>
+                <p>✔️data akan tersimpan sementara pada table mahasiswa</p>
+                <p>✔️data akan tersimpan sementara pada table mahasiswa</p>
+                <p>✔️yang di tampilkan pada table hanya nama, prodi/program studi dan semester</p>
+                <p>✔️jika pencet"simpan data" namun data belum ke isi semua, maka muncul alert</p>
+            </div>
+
+            <h3>Table Mahasiswa</h3>
+            <table id="tableMahasiswa">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Info</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   <!-- Data akan ditambahkan lewat JavaScript dari inputan data -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let nomor = 1;
+
+        function simpanData() {
+            const nama = document.getElementById("namalengkap").value;
+            const NIM = document.getElementById("NIM").value;
+            const ProgramStudi = document.getElementById("programstudi").value;
+            const semester = document.getElementById("semester").value;
+            const email = document.getElementById("Email").value;
+
+            if (nama && ProgramStudi && semester) {
+                const tabel = document.getElementById("tableMahasiswa").getElementsByTagName("tbody")[0];
+                const row = tabel.insertRow();
+
+                const cellNo = row.insertCell(0);
+                const cellNama = row.insertCell(1);
+                const cellInfo = row.insertCell(2);
+
+                cellNo.innerHTML = nomor++;
+                cellNama.innerHTML = nama;
+                cellInfo.innerHTML = `prodi: ${ProgramStudi}<br>Semester: ${semester}<br>`;
+
+                document.getElementById("inputdata").reset();
+            } else {
+                alert("Harap isi semua data terlebih dahulu!");
+            }
+        }
+    </script>
+    </body>
+</html>
